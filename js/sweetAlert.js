@@ -16,7 +16,7 @@ function onSubmit(event) {
     console.log(form.submit); // 👉️ input#submit
   
     // ⛔️ TypeError: form.submit is not a function
-    form.submit();
+    HTMLFormElement.prototype.submit.call(form);
   }
   
   form.addEventListener('submit', onSubmit);
